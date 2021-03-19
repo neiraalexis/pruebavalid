@@ -13,8 +13,8 @@ Prueba Valid
 			└── validArchetypeCore
 					└──registro-core
 			└── validArchetypeWeb
-						└──registro-web
-					    └──registro_web-client
+					└──registro-web
+				        └──registro_web-client
 			      
 	
 
