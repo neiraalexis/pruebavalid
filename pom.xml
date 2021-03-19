@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <name>Prueba Valid</name>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.valid</groupId>
+    <artifactId>pruebaValid</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <distribution>repo</distribution>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+        </license>
+    </licenses>
+   
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.compiler.plugin>3.8.1</version.compiler.plugin>
+        <version.ear.plugin>3.0.1</version.ear.plugin>
+        <version.surefire.plugin>2.19.1</version.surefire.plugin>
+        <version.shade.plugin>2.4.3</version.shade.plugin>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>     
+    </properties>
+   
+    
+    <distributionManagement>
+       
+    </distributionManagement>
+    <profiles>
+        <profile>
+            <id>development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>           
+                <repository>
+                    <id>mvnrepository</id>
+                    <url>http://repo1.maven.org/maven2</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </repository>
+            </repositories>
+            <build>
+                <plugins>                   
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>  
+                        <version>${version.compiler.plugin}</version>       
+                    </plugin>
+                </plugins>
+            </build>            
+        </profile>  
+          
+    </profiles>
+    
+ 
+    <modules>
+        <module>commons</module>
+        <module>validParent</module>       
+        <module>validArchetype</module>
+        <module>validArchetypeCore</module>
+        <module>validArchetypeWeb</module>  
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>           
+        </dependency>     
+    </dependencies>
+
+
+</project>

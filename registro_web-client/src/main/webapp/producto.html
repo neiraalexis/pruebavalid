@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Productos</title>
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+
+    <body>
+
+        <div class="header">
+            <input type="text" id="searchKey"/>
+            <button id="btnSearch">Buscar</button>
+            <button id="btnAdd">Nuevo Producto</button>
+            <a id="btnVolver"  href="http://localhost:8080/integrasaas/index.html">Index</a>
+        </div>
+
+
+        <div class="leftArea">
+            <ul id="productoList"></ul>
+        </div>
+
+        <form id="productoForm">
+
+            <div class="mainArea">
+
+                <label>Id:</label>
+                <input id="productoId" name="id" type="text" disabled />
+
+                <label>Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label>Descripcion</label>
+                <input type="text" id="descripcion" name="descripcion"/>
+
+                <label>precio Base</label>
+                <input type="text" id="precioBase" name="precioBase"/>
+
+                <label>Vendedor</label>
+                <input type="text" id="vendedorId" name="vendedorId"/>
+                
+                <button id="btnSave">Save</button>
+                <button id="btnDelete">Delete</button>
+
+            </div>
+
+        </form>
+
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <script src="js/producto.js"></script>
+
+    </body>
+</html>

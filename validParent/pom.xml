@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">	
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.valid</groupId>
+    <artifactId>validParent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.compiler.plugin>3.1</version.compiler.plugin>
+        <version.ear.plugin>2.10.1</version.ear.plugin>
+        <version.ejb.plugin>3.0.1</version.ejb.plugin>
+        <version.war.plugin>3.2.2</version.war.plugin>
+        <version.jar.plugin>2.6</version.jar.plugin>
+        <version.surefire.plugin>2.19.1</version.surefire.plugin>
+        <version.shade.plugin>2.4.3</version.shade.plugin>   
+        <mule.tools.version>1.2</mule.tools.version>            
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>  
+    </properties>
+    
+    
+    <distributionManagement>
+        <!--site>
+            <id>nexus-snapshots</id>
+            <name>Nexus Sites</name>
+            <url>dav:http://localhost:8081/nexus/content/sites/site/</url>
+        </site-->  
+        <!--        <repository>
+            <id>localRepo</id>
+            <name>localRepository</name>
+            <url>file://C:\repositories\production</url>  
+        </repository>      -->
+        <!-- Publish the versioned snapshot here -->     
+ 
+        <!-- Publish the versioned releases here -->
+        <snapshotRepository> 
+            <id>localRepoNexus</id> 
+            <name>localRepo-nexus</name> 
+            <url>http://localhost:8080/nexus/content/repositories/snapshots</url> 
+        </snapshotRepository> 
+     
+    </distributionManagement>
+	
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.valid</groupId>
+                <artifactId>commons</artifactId>               
+                <version>${project.version}</version>
+            </dependency> 
+        </dependencies>
+    </dependencyManagement>
+   	
+    <build>
+        <!--         <finalName>${project.name}</finalName> -->
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>                   
+                </includes>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                      <include>**/*.sql</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/app/</directory>
+            </resource>			
+        </resources>
+        <pluginManagement>
+        </pluginManagement>
+    </build>
+
+
+</project>

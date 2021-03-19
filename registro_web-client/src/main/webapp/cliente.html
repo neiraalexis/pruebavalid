@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Clientes</title>
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <div class="header">          
+            <button id="btnAdd">Nuevo Cliente</button>
+            <a id="btnVolver"  href="http://localhost:8084/clienteweb/index.html">Index</a>
+        </div>
+        <div class="leftArea">
+            <ul id="clienteList"></ul>
+        </div>
+        <form id="clienteForm">
+            <div class="mainArea">
+                <label>Id:</label>
+                <input id="clienteId" name="id" type="text" disabled />
+                <label>Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label>Apellido</label>
+                <input type="text" id="apellido" name="apellido"/>
+                <input type="hidden" id="procesado" name="procesado" value="false"/>
+                <button id="btnSave">Save</button>
+            </div>
+        </form>
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <script src="js/cliente.js"></script>
+    </body>
+</html>
